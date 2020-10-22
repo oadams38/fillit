@@ -13,6 +13,8 @@
 
 char        *check_file_valid(char *argv);
 void        solve_and_print(char *data);
+void        solve(char **tab, char *matrix, int i, int j);
+void        print_solution(char *solution);
 int         squared(int n);
 int         sqrt(int n);
 
