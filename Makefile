@@ -4,6 +4,8 @@ SRCS = fillit.c \
 		check_file_valid.c \
 		solve_and_print.c \
 		tools.c \
+		print_solution.c \
+		solve.c \
 		
 
 OBJS = $(SRCS:.c=.o)

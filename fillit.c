@@ -10,6 +10,7 @@ int     main(int argc, char **argv)
         {
             //ft_putstr(data);
             //free((void*)data);
+            //ft_putstr(data);
             solve_and_print(data);
         }
         else

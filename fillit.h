@@ -13,9 +13,10 @@
 
 char        *check_file_valid(char *argv);
 void        solve_and_print(char *data);
-void        solve(char **tab, char *matrix, int i, int j);
+int         solve(char **tab, char *matrix, int i, int j);
 void        print_solution(char *solution);
-int         squared(int n);
-int         sqrt(int n);
+int         ft_squared(int n);
+int         ft_sqrt(int n);
+char        *solution(char *matrix);
 
 #endif

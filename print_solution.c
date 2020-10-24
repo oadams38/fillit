@@ -8,7 +8,7 @@ void    print_solution(char *solution)
     char    *Pmatrix;
     int     i;
 
-    side_size = sqrt(ft_strlen(solution));
+    side_size = ft_sqrt(ft_strlen(solution));
     matrix_size = side_size * (side_size + 1) + 1;
     matrix_solution = ft_strnew(matrix_size);
     Pmatrix = matrix_solution;
