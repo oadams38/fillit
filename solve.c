@@ -37,7 +37,7 @@ int     fits(char *matrix, char *tetr, int i, int side)
         }
         i += ((int)(tetr[j] - '0') - tmp);
         tmp = (int)(tetr[j] - '0');
-        if (matrix[i] != '0' || (i / side != y))
+        if (matrix[i] != '.' || (i / side != y))
             return (-1);
     }
     return (1);
@@ -61,6 +61,16 @@ char     *fill(char *matrix, char *tetr, int i, int side)
     return (matrix);
 }
 
+void    remove_tetr(char *matrix, char c, int i)
+{
+    while (matrix[i])
+    {
+        if (matrix[i] == c)
+            matrix[i] = '.';
+        i++;
+    }
+}
+
 int    solve(char **tab, char *matrix, int i, int j)
 {
     int         side = 0;
@@ -76,10 +86,13 @@ int    solve(char **tab, char *matrix, int i, int j)
     if (j >= 0 && solved == 0)
     {
         len = get_len(tab[j], side);
-        while (i + len < side * side)
+        while (i + len < side * side && solved == 0)
         {
             if (fits(matrix, tab[j], i, side) != -1)
+            {
                 solve(tab, fill(matrix, tab[j], i, side), 0, j - 1);
+                remove_tetr(matrix, tab[j][4], i);
+            }
             i++;
         }
     }

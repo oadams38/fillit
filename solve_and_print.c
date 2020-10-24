@@ -21,12 +21,12 @@ void    solve_and_print(char *data)
     mtrx_size = ft_squared(ft_sqrt(nb_tetr * 4));
     //importance_sort(tab);
     matrix = ft_strnew(mtrx_size);  //MALLOC
-    ft_memset(matrix, '0', mtrx_size);
+    ft_memset(matrix, '.', mtrx_size);
     solved = 0;
     while (solved == 0)
     {
         solved = solve(tab, matrix, 0, nb_tetr - 1);
         mtrx_size = ft_squared(ft_sqrt(mtrx_size) + 1);
-        matrix = ft_memset(ft_realloc(matrix, mtrx_size), '0', mtrx_size); //REALLOC
+        matrix = ft_memset(ft_realloc(matrix, mtrx_size), '.', mtrx_size); //REALLOC
     }
 }

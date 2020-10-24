@@ -3,7 +3,10 @@
 int     main(int argc, char **argv)
 {
     char *data;
-
+    clock_t start, end;
+    double runTime;
+    
+    start = clock();
     if (argc == 2)
     {
         if ((data = check_file_valid(argv[1])) != NULL)
@@ -21,5 +24,8 @@ int     main(int argc, char **argv)
         //USAGE
         //EXIT PROPERLY
     }
+    end = clock();
+    runTime = (end - start) / (double) CLOCKS_PER_SEC;
+    printf("Solution found in %g seconds\n", runTime);
     return (0);
 }

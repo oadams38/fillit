@@ -5,6 +5,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <time.h>
 
 # define BUFFSIZE 21
 # define MAX_NB_TETR 26
